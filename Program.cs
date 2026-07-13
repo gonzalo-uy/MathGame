@@ -36,10 +36,46 @@ while (true)
 
             break;
         case MenuOption.Multiplication:
+
             AnsiConsole.MarkupLine("You selected [cyan]Multiplication[/]!");
+            correctResult = Addition.AddNumber(numberA, numberB);
+            GameRound.Play("*", numberA, numberB, Multiplication.MultiplicationNumber(numberA, numberB));
+
             break;
+
         case MenuOption.Random:
+
             AnsiConsole.MarkupLine("You selected [cyan]Radom Mode[/]!");
+
+            Random rMode = new Random();
+            int randomChoise = rMode.Next(0, 4);
+            switch (randomChoise)
+            {
+                case 0:
+
+                    AnsiConsole.MarkupLine("You selected [cyan]Addition[/]!");
+                    correctResult = Addition.AddNumber(numberA, numberB);
+                    GameRound.Play("+", numberA, numberB, Addition.AddNumber(numberA, numberB));
+
+                    break;
+
+                case 1:
+
+                    AnsiConsole.MarkupLine("You selected [cyan]Subtraction[/]!");
+                    correctResult = Subtraction.SubtracNumber(numberA, numberB);
+                    GameRound.Play("-", numberA, numberB, Subtraction.SubtracNumber(numberA, numberB));
+
+                    break;
+
+                case 2:
+
+                    AnsiConsole.MarkupLine("You selected [cyan]Division[/]!");
+                    var (randDividend, randDivisor) = Randomize.GenerateDivisionNumbers();
+                    GameRound.Play("/", randDividend, randDivisor, Division.DivNum(randDividend, randDivisor));
+
+                    break;
+
+            }
             break;
     }
 }
