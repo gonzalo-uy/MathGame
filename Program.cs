@@ -8,14 +8,12 @@ while (true)
 
     MenuOption choice = UserInterface.ShowMenu();
     var (numberA, numberB) = Randomize.GenerateNumbers();
-    int correctResult = 0;
 
     switch (choice)
     {
         case MenuOption.Addition:
 
             AnsiConsole.MarkupLine("You selected [cyan]Addition[/]!");
-            correctResult = Addition.AddNumber(numberA, numberB);
             GameRound.Play("+", numberA, numberB, Addition.AddNumber(numberA, numberB));
 
             break;
@@ -23,7 +21,6 @@ while (true)
         case MenuOption.Subtraction:
 
             AnsiConsole.MarkupLine("You selected [cyan]Subtraction[/]!");
-            correctResult = Subtraction.SubtracNumber(numberA, numberB);
             GameRound.Play("-", numberA, numberB, Subtraction.SubtracNumber(numberA, numberB));
 
             break;
@@ -38,7 +35,6 @@ while (true)
         case MenuOption.Multiplication:
 
             AnsiConsole.MarkupLine("You selected [cyan]Multiplication[/]!");
-            correctResult = Addition.AddNumber(numberA, numberB);
             GameRound.Play("*", numberA, numberB, Multiplication.MultiplicationNumber(numberA, numberB));
 
             break;
@@ -54,7 +50,6 @@ while (true)
                 case 0:
 
                     AnsiConsole.MarkupLine("You selected [cyan]Addition[/]!");
-                    correctResult = Addition.AddNumber(numberA, numberB);
                     GameRound.Play("+", numberA, numberB, Addition.AddNumber(numberA, numberB));
 
                     break;
@@ -62,7 +57,6 @@ while (true)
                 case 1:
 
                     AnsiConsole.MarkupLine("You selected [cyan]Subtraction[/]!");
-                    correctResult = Subtraction.SubtracNumber(numberA, numberB);
                     GameRound.Play("-", numberA, numberB, Subtraction.SubtracNumber(numberA, numberB));
 
                     break;
@@ -74,6 +68,14 @@ while (true)
                     GameRound.Play("/", randDividend, randDivisor, Division.DivNum(randDividend, randDivisor));
 
                     break;
+
+                case 3:
+
+                    AnsiConsole.MarkupLine("You selected [cyan]Multiplication[/]!");
+                    GameRound.Play("*", numberA, numberB, Multiplication.MultiplicationNumber(numberA, numberB));
+
+                    break;
+
 
             }
             break;

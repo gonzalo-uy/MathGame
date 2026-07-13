@@ -1,4 +1,3 @@
-using Spectre.Console;
 namespace MathGame;
 
 public class Addition
